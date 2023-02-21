@@ -16,10 +16,10 @@ Questo richiederà un minimo di ricerca!
 //calcolo il prezzo del biglietto in base ai km (0.21 * numero di chilometri);
 
 //verifico che l'età del passeggero sia minore di 18
-    //applico lo sconto del 20% ((prezzo * 20) / 100);
+    //applico lo sconto del 20% (prezzo - [prezzo * 0.20]);
         ALTRIMENTI
             //verifico che l'età del passeggero sia maggiore di 65
-                //applico lo sconto del 40% ((prezzo * 40) / 100);
+                //applico lo sconto del 40% (prezzo - [prezzo * 0.40]);
                     ATRIMENTI
                         //non applico nessuno sconto;
 
@@ -38,12 +38,16 @@ console.log (
 
 let prezzoBiglietto = (0.21 * numeroChilometri);
 
+let prezzoFinale;
+
 if (etaPasseggero < 18){
-    (prezzoBiglietto * 0.20);
+  prezzoFinale = (prezzoBiglietto - [prezzoBiglietto * 0.20]);
+
 } else if (etaPasseggero > 65){
-    (prezzoBiglietto * 0.40);
+    prezzoFinale = (prezzoBiglietto - [prezzoBiglietto * 0.40]);
+
 } else {
-    (prezzoBiglietto);
+    prezzoFinale = (prezzoBiglietto);
 };
 
-console.log ('il prezzo del biglietto è', parseFloat(prezzoBiglietto).toFixed(2));
+console.log ('il prezzo del biglietto è', parseFloat(prezzoFinale).toFixed(2));
